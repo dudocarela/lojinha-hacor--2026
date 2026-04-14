@@ -4,7 +4,7 @@ const produtos = [
     { nome: "Corta-vento Hacoré", preco: "R$ 120,00", imagem: "images/corta-vento.png" },
     { nome: "Tirante + Borracha", preco: "R$ 15,00", imagem: "images/tirante.png" },
     { nome: "Camisa Edição 2022", preco: "R$ 50,00", imagem: "images/camisa.png" },
-    { nome: "Moletom Edição 2022 e Calça Moletom", preco: "R$ 135,00", preco: "R$ 110,00", imagem: "images/moletom.png" }
+    { nome: "Moletom Edição 2022 e Calça Moletom", preco: "R$ 135,00 e R$ 110,00", imagem: "images/moletom.png" }
 ];
 
 const grid = document.querySelector(".grid");
