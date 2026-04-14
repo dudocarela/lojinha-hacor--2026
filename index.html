@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lojinha do Gesma</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Lojinha do Gesma | Premium Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header id="main-header">
   <h1>Lojinha do Gesma</h1>
   <div class="menu-toggle">☰</div>
-
   <nav class="menu">
     <a href="#">Início</a>
     <a href="#">Coleção</a>
@@ -22,25 +20,28 @@
 </header>
 
 <section class="hero">
+  <div class="fogueira-particulas" id="faiscas-container"></div>
   <div class="hero-text">
-    <h2>Explorar a Natureza com Estilo</h2>
-    <p>Elegância, aventura e identidade.</p>
+    <h2 class="reveal">Explorar a Natureza com Estilo</h2>
+    <p class="reveal">Elegância, aventura e identidade.</p>
+    <div class="scroll-indicator"></div>
   </div>
 </section>
 
 <section class="produtos">
-  <h2>Nossa Coleção</h2>
+  <h2 class="reveal">Nossa Coleção</h2>
   <div class="grid"></div>
 </section>
 
 <footer>
-  <p>© 2026 Lojinha do Gesma</p>
+  <p>© 2026 Lojinha do Gesma — Crafted for Adventure</p>
 </footer>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
   <span class="fechar">&times;</span>
-  <img class="modal-img" id="modal-img">
+  <div class="modal-content">
+    <img class="modal-img" id="modal-img">
+  </div>
 </div>
 
 <script src="script.js"></script>
