@@ -1,24 +1,10 @@
 const produtos = [
-    {
-        nome: "Camiseta Nature",
-        preco: "R$ 89,90",
-        imagem: "https://via.placeholder.com/300"
-    },
-    {
-        nome: "Moletom Hacoré",
-        preco: "R$ 159,90",
-        imagem: "https://via.placeholder.com/300"
-    },
-    {
-        nome: "Calça Verde",
-        preco: "R$ 129,90",
-        imagem: "https://via.placeholder.com/300"
-    },
-    {
-        nome: "Jaqueta Premium",
-        preco: "R$ 199,90",
-        imagem: "https://via.placeholder.com/300"
-    }
+    { nome: "Ecobag Brim", preco: "R$ 45,00", imagem: "images/ecobag.png" },
+    { nome: "Boné Brim", preco: "R$ 50,00", imagem: "images/bone.png" },
+    { nome: "Corta-vento Hacoré", preco: "R$ 120,00", imagem: "images/corta-vento.png" },
+    { nome: "Tirante + Borracha", preco: "R$ 15,00", imagem: "images/tirante.png" },
+    { nome: "Camisa Edição 2022", preco: "R$ 50,00", imagem: "images/camisa.png" },
+    { nome: "Moletom Edição 2022", preco: "R$ 130,00", imagem: "images/moletom.png" }
 ];
 
 const grid = document.querySelector(".grid");
@@ -28,24 +14,34 @@ produtos.forEach(produto => {
     card.classList.add("card");
 
     card.innerHTML = `
-        <img src="${produto.imagem}" alt="">
-        <h3>${produto.nome}</h3>
-        <p>${produto.preco}</p>
-        <button>Comprar</button>
+        <img src="${produto.imagem}">
+        <div class="card-content">
+            <h3>${produto.nome}</h3>
+            <p>${produto.preco}</p>
+            <button>Comprar</button>
+        </div>
     `;
 
     grid.appendChild(card);
 });
 
-/* ANIMAÇÃO AO SCROLL */
+/* ANIMAÇÃO */
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".card").forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const screenHeight = window.innerHeight;
+        const pos = card.getBoundingClientRect().top;
+        const screen = window.innerHeight;
 
-        if(position < screenHeight - 50){
+        if (pos < screen - 50) {
             card.style.opacity = 1;
             card.style.transform = "translateY(0)";
         }
     });
+});
+
+/* MENU MOBILE */
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggle.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 });
