@@ -46,10 +46,11 @@ header h1 {
   color: white;
 }
 
-/* HERO */
+/* HERO COM SUA IMAGEM */
 .hero {
   height: 90vh;
-  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url("images/hacore.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 60px;
