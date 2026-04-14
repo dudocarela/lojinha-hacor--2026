@@ -152,15 +152,16 @@
 
 <script>
   const produtos = [
-    { nome: "Ecobag Brim (verde-musgo)", preco: "R$ 45,00", imagem: "images/ecobag.png" },
-    { nome: "Boné Brim (verde-musgo)", preco: "R$ 50,00", imagem: "images/bone.png" },
-    { nome: "Corta-vento Hacoré (azul marinho)", preco: "R$ 120,00", imagem: "images/corta-vento.png" },
+    { nome: "Ecobag Brim", preco: "R$ 45,00", imagem: "images/ecobag.png" },
+    { nome: "Boné Brim", preco: "R$ 50,00", imagem: "images/bone.png" },
+    { nome: "Corta-vento Hacoré", preco: "R$ 120,00", imagem: "images/corta-vento.png" },
     { nome: "Tirante + Borracha", preco: "R$ 15,00", imagem: "images/tirante.png" },
     { nome: "Camisa Edição 2022", preco: "R$ 50,00", imagem: "images/camisa.png" },
     { nome: "Moletom Edição 2022 e Calça Moletom", preco: "R$ 135,00 e R$ 110,00", imagem: "images/moletom.png" }
   ];
 
   const grid = document.getElementById("produtos-grid");
+  const linkFormulario = "https://docs.google.com/forms/d/e/1FAIpQLSfrQ8VbMCznQ-xeTOUJ98aEgieXx0SsGQO8Y7ZaS8zpvCjJeA/viewform";
 
   produtos.forEach(p => {
     const card = document.createElement("div");
@@ -170,10 +171,17 @@
       <div class="card-content">
         <h3>${p.nome}</h3>
         <p>${p.preco}</p>
-        <button>Comprar Agora</button>
+        <button class="btn-comprar">Comprar Agora</button>
       </div>
     `;
     grid.appendChild(card);
+  });
+
+  // Evento de clique nos botões de compra
+  document.addEventListener("click", e => {
+    if (e.target.classList.contains("btn-comprar")) {
+      window.open(linkFormulario, "_blank");
+    }
   });
 
   // Efeito de scroll no Header
