@@ -14,7 +14,7 @@ produtos.forEach(produto => {
     card.classList.add("card");
 
     card.innerHTML = `
-        <img src="${produto.imagem}">
+        <img src="${produto.imagem}" class="produto-img">
         <div class="card-content">
             <h3>${produto.nome}</h3>
             <p>${produto.preco}</p>
@@ -25,18 +25,20 @@ produtos.forEach(produto => {
     grid.appendChild(card);
 });
 
-/* ANIMAÇÃO */
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".card").forEach(card => {
-        const pos = card.getBoundingClientRect().top;
-        const screen = window.innerHeight;
+/* MODAL */
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const fechar = document.querySelector(".fechar");
 
-        if (pos < screen - 50) {
-            card.style.opacity = 1;
-            card.style.transform = "translateY(0)";
-        }
-    });
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("produto-img")) {
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+    }
 });
+
+fechar.onclick = () => modal.style.display = "none";
+modal.onclick = () => modal.style.display = "none";
 
 /* MENU MOBILE */
 const toggle = document.querySelector(".menu-toggle");
